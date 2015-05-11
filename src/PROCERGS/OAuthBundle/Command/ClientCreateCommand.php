@@ -22,6 +22,8 @@ class ClientCreateCommand extends ContainerAwareCommand
                 ->addArgument('site-url', InputArgument::REQUIRED, 'Sets the client main URL', null)
                 ->addOption('redirect-uri', null, InputOption::VALUE_REQUIRED | InputOption::VALUE_IS_ARRAY, 'Sets redirect uri for client. Use this option multiple times to set multiple redirect URIs.', null)
                 ->addOption('grant-type', null, InputOption::VALUE_REQUIRED | InputOption::VALUE_IS_ARRAY, 'Sets allowed grant type for client. Use this option multiple times to set multiple grant types..', null)
+                ->addOption('published', null, InputOption::VALUE_OPTIONAL | InputOption::VALUE_IS_ARRAY, 'Sets if the client is published or not.', null)
+                ->addOption('vsible', null, InputOption::VALUE_OPTIONAL | InputOption::VALUE_IS_ARRAY, 'Sets if the client is visible or not.', null)
                 ->setHelp(<<<EOT
 The <info>%command.name%</info>command creates a new client.
 
@@ -40,6 +42,11 @@ EOT
         $client->setSiteUrl($input->getArgument('site-url'));
         $client->setRedirectUris($input->getOption('redirect-uri'));
         $client->setAllowedGrantTypes($input->getOption('grant-type'));
+        $client->setTermsOfUseUrl('http://localhost');
+        $published = is_null($input->getOption('published')) ? 1 : $input->getOption('published');
+        $client->setPublished($published);
+        $visible = is_null($input->getOption('visible')) ? 1 : $input->getOption('visible');
+        $client->setVisible($visible);
         $clientManager->updateClient($client);
         $output->writeln(sprintf('Added a new client with name <info>%s</info> and public id <info>%s</info>.', $client->getName(), $client->getPublicId()));
     }
