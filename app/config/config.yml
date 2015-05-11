@@ -5,7 +5,7 @@ imports:
 
 framework:
     #esi:             ~
-    translator:      { fallback: %locale% }
+    translator:      { fallback: pt_BR }
     secret:          %secret%
     router:
         resource: "%kernel.root_dir%/config/routing.yml"
@@ -16,7 +16,7 @@ framework:
     templating:
         engines: ['twig']
         #assets_version: SomeVersionScheme
-    default_locale:  "%locale%"
+    default_locale:  pt_BR
     trusted_proxies: ~
     session:         ~
     fragments:       ~
@@ -51,7 +51,7 @@ assetic:
           inputs:
               - 'bundles/procergslogincidadaocore/bootstrap/3.3.1/fonts/glyphicons-halflings-regular.woff'
           output: fonts/glyphicons-halflings-regular.woff
-      bootstrap_fonts_ttf:            
+      bootstrap_fonts_ttf:
           inputs:
               - 'bundles/procergslogincidadaocore/bootstrap/3.3.1/fonts/glyphicons-halflings-regular.ttf'
           output: fonts/glyphicons-halflings-regular.ttf
