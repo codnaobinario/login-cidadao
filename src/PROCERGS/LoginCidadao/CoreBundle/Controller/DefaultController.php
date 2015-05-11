@@ -168,10 +168,10 @@ class DefaultController extends Controller
      */
     public function dashboardAction()
     {
-      // badges
-      $badgesHandler = $this->get('badges.handler');
-      $badges = $badgesHandler->getAvailableBadges();
-      $userBadges = $badgesHandler->evaluate($this->getUser())->getBadges();
+      // badges - DISABLED
+//      $badgesHandler = $this->get('badges.handler');
+//      $badges = $badgesHandler->getAvailableBadges();
+//      $userBadges = $badgesHandler->evaluate($this->getUser())->getBadges();
 
       // logs
       $em = $this->getDoctrine()->getManager();
@@ -185,8 +185,7 @@ class DefaultController extends Controller
 
       $defaultClientUid = $this->container->getParameter('oauth_default_client.uid');
 
-      return array('allBadges' => $badges,
-                   'userBadges' => $userBadges,
+      return array(
                    'logs' => $logs,
                    'notifications' => $notifications,
                    'defaultClientUid' => $defaultClientUid);

@@ -22,9 +22,9 @@ use PROCERGS\LoginCidadao\CoreBundle\Form\Type\DocRgFormType;
 use PROCERGS\LoginCidadao\CoreBundle\Entity\IdCard;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Form\FormError;
-use PROCERGS\LoginCidadao\BadgesBundle\BadgesEvents;
-use PROCERGS\LoginCidadao\BadgesBundle\Event\EvaluateBadgesEvent;
-use PROCERGS\LoginCidadao\BadgesBundle\Event\ListBadgesEvent;
+//use PROCERGS\LoginCidadao\BadgesBundle\BadgesEvents;
+//use PROCERGS\LoginCidadao\BadgesBundle\Event\EvaluateBadgesEvent;
+//use PROCERGS\LoginCidadao\BadgesBundle\Event\ListBadgesEvent;
 use PROCERGS\LoginCidadao\CoreBundle\Helper\GridHelper;
 
 class PersonController extends Controller
@@ -564,14 +564,14 @@ class PersonController extends Controller
      * @Route("/profile/badges", name="lc_profile_badges")
      * @Template()
      */
-    public function badgesListAction(Request $request)
-    {
-      $badgesHandler = $this->get('badges.handler');
-
-      $badges = $badgesHandler->getAvailableBadges();
-      $user = $badgesHandler->evaluate($this->getUser());
-
-      return array('allBadges' => $badges, 'userBadges' => $user->getBadges());
-    }
+//    public function badgesListAction(Request $request)
+//    {
+//      $badgesHandler = $this->get('badges.handler');
+//
+//      $badges = $badgesHandler->getAvailableBadges();
+//      $user = $badgesHandler->evaluate($this->getUser());
+//
+//      return array('allBadges' => $badges, 'userBadges' => $user->getBadges());
+//    }
 
 }
