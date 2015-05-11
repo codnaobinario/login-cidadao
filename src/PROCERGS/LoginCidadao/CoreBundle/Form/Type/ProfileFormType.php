@@ -67,10 +67,14 @@ class ProfileFormType extends BaseType
                         ->orderBy('u.name', 'ASC');
                     },
                     'label' => 'Nationality'
-                        ));                
+                        ));
                 $builder->add('ufsteppe', 'text', array("required"=> false, "mapped"=>false));
                 $builder->add('citysteppe', 'text', array("required"=> false, "mapped"=>false));
-                $builder->add('ufpreferred', 'hidden', array("data" => $country->getId(),"required"=> false, "mapped"=>false));
+                // Check if country is loaded
+                if (!is_null($country)) {
+                  $builder->add('ufpreferred', 'hidden', array("data" => $country->getId(),"required"=> false, "mapped"=>false));
+                }
+
 
                 $builder->addEventListener(FormEvents::PRE_SET_DATA, function (FormEvent $event) {
                     $person = $event->getData();
