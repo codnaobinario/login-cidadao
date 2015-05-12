@@ -52,7 +52,7 @@ body {
 }
 
 .lc-box .title {
-    background-color: #5DB35D;
+    background-color: #2daf60;
     color: #FFF;
     display: block;
     height: 50px;
@@ -82,6 +82,7 @@ body {
     margin: 0 auto;
     max-width: 250px;
     width: 100%;
+    text-transform: uppercase;
 }
 
 .lc-box .connect-box > div {
@@ -90,7 +91,7 @@ body {
 }
 
 .lc-box .connect-box hr {
-    border-color: #039935;
+    border-color: #2daf60;
     margin:0 20px;
 }
 
@@ -200,6 +201,7 @@ body {
   margin-bottom: -20px;
   margin-top: 10px;
   margin-left: 18px;
+  text-transform: uppercase;
 }
 
 .lc-box .terms a {
@@ -214,6 +216,11 @@ body {
   font-weight: 500;
   margin: 10px 24px 0;
   padding: 3px 12px;
+}
+
+#login-box {
+  width:450px;
+  margin: 0 auto;
 }
 
 #login-box .remember-group {

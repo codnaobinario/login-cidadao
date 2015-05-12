@@ -65,7 +65,7 @@ body.no-scroll {
 .settings-nav li a.active,
 .settings-nav li a.active:hover {
     /*background-color: #009933;*/
-    background-color: #5DB35D !important;
+    background-color: #2daf60 !important;
     color: #F1F1F1 !important;
 }
 
