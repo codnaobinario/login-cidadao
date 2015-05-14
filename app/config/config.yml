@@ -87,6 +87,7 @@ assetic:
           - 'bundles/procergslogincidadaocore/css/custom.recaptcha.css'
           - 'bundles/procergslogincidadaocore/css/list.buttons.css'
           - 'bundles/procergslogincidadaocore/css/notification.css'
+          - 'bundles/procergslogincidadaocore/css/fonts.css'
       lc_logged_css:
         inputs:
           - '@lc_base_css'
