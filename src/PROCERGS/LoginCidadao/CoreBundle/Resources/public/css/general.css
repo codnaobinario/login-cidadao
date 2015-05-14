@@ -164,6 +164,7 @@ footer .content {
 }
 
 footer h3 {
+    clear:both;
     color: #2daf60;
     margin: 20px 15px;
 }
@@ -447,4 +448,16 @@ form .has-feedback .sr-only ~ .form-control-feedback {
 
 #oauth-box .buttons.row {
     margin-top: 20px;
+}
+
+.gov-img {
+  float:left;
+  width:50px;
+}
+
+.gov-desc {
+  color: #fff;
+  float:left;
+  margin: 20px 10px;
+  font-size: 16px;
 }
