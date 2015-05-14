@@ -59,7 +59,7 @@
             {# Apps list #}
             <li class="btn-group apps pull-right">
                 <button type="button" class="btn dropdown-toggle" data-toggle="dropdown" title="{% trans %}Applications{% endtrans %}">
-                    <i class="glyphicon glyphicon-th"></i>
+                    <i class="logincidadao icon-servicos"></i>
                 </button>
                 <ul class="dropdown-menu clearfix">
                   <li class="dropdown-header">
@@ -92,14 +92,14 @@
             {# Notifications #}
             <li class="btn-group notifications pull-right dropdown-keep-open">
                 <button type="button" class="btn dropdown-toggle" data-toggle="dropdown" title="{% trans %}Notifications{% endtrans %}">
-                    <i class="glyphicon glyphicon-bell">
-                        {% set unreadTotal = notifications_helper.getTotalUnread %}
+                  {% set unreadTotal = notifications_helper.getTotalUnread %}
                         {% if unreadTotal > 0 %}
                             {% if unreadTotal > 99 %}
                                 {% set unreadTotal = '99+' %}
                             {% endif %}
-                            <span class="label label-danger notification-total-unread-badge">{{ unreadTotal }}</span>
+                            <span class="icon-notificacoes-total">{{ unreadTotal }}</span>
                         {% endif %}
+                    <i class="logincidadao icon-notificacoes{% if unreadTotal > 0 %} icon-notificacoes-on{% endif %}">
                     </i>
                 </button>
                 <ul class="dropdown-menu clearfix">
