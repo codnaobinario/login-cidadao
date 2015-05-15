@@ -69,6 +69,8 @@ body.no-scroll {
     color: #F1F1F1 !important;
 }
 
+
+
 /*.settings-nav li a:hover, .settings-nav .open > a {
     background-image: none;
     background-color: #E2EFDE!important;
@@ -261,10 +263,6 @@ body.no-scroll {
     margin-right: 3px;
 }
 
-#profile-edit img {
-    max-width: 100%;
-}
-
 #profile-edit .file-upload {
     color: #000;
 }
@@ -371,6 +369,33 @@ body.no-scroll {
 
 #profile-edit .unlink-confirmation {
     display: none;
+}
+
+#profile-edit .form-group {
+  float:left;
+  width:40%;
+  margin: 10px 20px;
+}
+
+#profile-edit .pull-left {
+  float: none !important;
+  margin: 20px;
+}
+
+#profile-edit img.profile-picture {
+  width:125px;
+}
+
+#profile-edit .app-username {
+  /*float:right;*/
+}
+
+#profile-edit .change-picture {
+  /* float:left; */
+  width:45px;
+  height:45px;
+  font-size:28px;
+  margin: 0 20px;
 }
 
 .applications .service:hover {

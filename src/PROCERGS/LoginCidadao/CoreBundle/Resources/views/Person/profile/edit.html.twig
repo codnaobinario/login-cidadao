@@ -14,19 +14,16 @@
 
     <div class="form-content">
         <div class="panel panel-default">
-            <div class="panel-heading">
-                <div class="panel-title">
-                    <div class="media clearfix">
-                        <div class="pull-left">
-                            <img src="{{ include("PROCERGSLoginCidadaoCoreBundle:Person:currentUserPicture.html.twig", {'targetPerson': app.user}) }}" class="profile-picture">
-                            <button type="button" class="btn btn-xs btn-link btn-block change-picture" title="{% trans %}Upload another picture{% endtrans %}">{{ 'Change' | trans }}</button>
-                        </div>
-                        <div class="media-body">
-                            <h2 class="media-heading personal-info">{{ 'Personal Information' | trans }}</h2>
-                            {{ app.user.username }}
-                        </div>
-                    </div>
-                </div>
+          <div class="panel-heading">
+            <h2 class="panel-title">
+                {{ 'Personal Information' | trans }}
+            </h2>
+          </div>
+
+          <div class="panel-body">
+            <div class="pull-left">
+              <img src="{{ include("PROCERGSLoginCidadaoCoreBundle:Person:currentUserPicture.html.twig", {'targetPerson': app.user}) }}" class="profile-picture">
+              <button type="button" class="glyphicon glyphicon-pencil btn btn btn-primary btn-xs btn-section profile-picture change-picture" title="{% trans %}Upload another picture{% endtrans %}"></button>
             </div>
             <div class="panel panel-info picture-upload-box" style="margin-bottom: 0">
                 <div class="panel-heading clearfix">
@@ -38,7 +35,6 @@
                     </div>
                 </div>
             </div>
-            <div class="panel-body">
                 {{ form_row(form.firstName) }}
                 {{ form_row(form.surname) }}
                 {{ form_row(form.birthdate) }}
@@ -131,20 +127,6 @@
                             {% endif %}
                         </div>
                 {% endif %}
-                {% if app.user.nfgAccessToken is null %}
-                        <div class="connect nfg disabled">
-                            <a data-href="{{ path('nfg_bind') }}" href="javascript:void(0);" class="col-xs-11 col-xs-offset-1 username nfgpopup">{{ 'Connect to the Nota Fiscal Gaúcha' | trans }}</a>
-                        </div>
-                {% else %}
-                        <div class="connect nfg">
-                            <span class="col-xs-9 col-xs-offset-1 username">{{ app.user.cpf | formatCpf }}</span>
-                            {% if app.user.hasPassword %}
-                            <a class="col-xs-2 unlink text-right"  href="{{ path('nfg_unbind') }}">
-                                <span class="glyphicon glyphicon-remove"></span>
-                            </a>
-                            {% endif %}
-                        </div>
-                {% endif %}
             </div>
         </div>
 
@@ -208,7 +190,7 @@
     profileEdit.urlSearchState = '{{ path('lc_search_city_by_state') }}';
     profileEdit.urlSearchCountry = '{{ path('lc_search_state_by_country') }}';
     profileEdit.mobileId = "#{{ form.mobile.vars.id }}";
-    profileEdit.ufpreferredId = '#{{ form.ufpreferred.vars.id }}';
+    //profileEdit.ufpreferredId = '#{{ form.ufpreferred.vars.id }}';
     profileEdit.addStateMessage = "{{ 'add.other.state'| trans }}";
     profileEdit.addCityMessage = "{{ 'add.other.city'| trans }}";
     profileEdit.loadMessage = "{{ 'field.loader'| trans }}";
